@@ -9,20 +9,42 @@
 }
 :root{
   --body-bg:lightgray ;
-  --colors:white;
+  --colors: black;
+  --hero__items-color :aliceblue;
+  --site-header-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  --text-shadow:0 0 5px rgb(7, 7, 7);
+  --hover-shadow:rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-body{
-  font-family: sans-serif;
-  background-color: var(--body-bg);
+.mode{
+  --body-bg: black;
+  --colors: lightgray;
+  --hero__items-color :rgb(156, 161, 167);
+  --site-header-box-shadow: rgba(250, 245, 245, 0.993) 0px 4px 7px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+  body{
+    font-family: sans-serif;
+    background-color: var(--body-bg);
+  }
 .container {
   max-inline-size: 1250px;
   margin: 0 auto;
   padding: 0 20px;
 }
+/* dark mode  */
+
+
+.dark-mode{
+  color: white;
+  background-color: #373737;
+}
+
+
 .site-header{
   padding: 15px 0;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow:var(--site-header-box-shadow);
+  position: sticky;
+  top: 0px;
+  background-color: var(--body-bg);
 }
 .header{
   display: flex;
@@ -34,7 +56,7 @@ body{
   font-size: 35px;
   font-weight: bold;
   color: var(--colors);
-  text-shadow: 0 0 5px rgb(7, 7, 7);
+  text-shadow:var(--text-shadow) ;
 }
 .header__mode-wrapper{
   display: flex;
@@ -51,7 +73,7 @@ body{
   cursor: pointer;
 }
 .header__mode-btn:hover{
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: var(--site-header-box-shadow);
 }
 .header__like-btn, .header__basket-btn{
   width: 35px;
@@ -63,10 +85,10 @@ body{
   cursor: pointer;
 }
 .header__like-btn:hover{
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: var(--site-header-box-shadow);
 }
 .header__basket-btn:hover{
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow:  var(--site-header-box-shadow);
 }
 
 /* hero-section start */
@@ -96,17 +118,18 @@ body{
 }
 .hero__item-btn{
   display: flex;
-  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
 }
 .hero__item{
-  background-color: aliceblue;
+  background-color: var(--hero__items-color);
   width: 350px;
   border-radius: 10px;
   padding: 10px;
-  box-shadow: rgba(109, 58, 58, 0.19) 0px 16px 25px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
 }
 .hero__item:hover{
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow:  var(--site-header-box-shadow);
 }
 .hero__like-btn, .hero__basket-btn, .hero__more-btn{
   display: flex;
@@ -159,4 +182,35 @@ body{
   background-color: aliceblue;
   padding: 15px;
   border-radius: 10px;
+}
+.like {
+  background-color: red;
+  color: white;
+}
+.BasketOn{
+  background-color: blue;
+}
+.header__add-country{
+  padding: 9px;
+  border-radius: 10px ;
+  border: none;
+  font-weight: bold;
+  font-size: 17px;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  width: 80px;
+}
+.header__add-country:hover{
+  box-shadow: var(--site-header-box-shadow);
+}
+.hero__basic-content{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__delete-btn, .hero__update-btn{
+height: 25px;
+width: 35px;
 }
